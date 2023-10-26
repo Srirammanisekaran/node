@@ -12,7 +12,7 @@ const password = 'Essae@54321123452023';
 app.get('/api/docitem', async (req, res) => {
     try {
     // Make the API request
-    const response = await axios.get('https://my403274-api.s4hana.cloud.sap/sap/opu/odata/sap/API_OPLACCTGDOCITEMCUBE_SRV/A_OperationalAcctgDocItemCube', {
+    const response = await axios.get('https://my403274-api.s4hana.cloud.sap/sap/opu/odata/sap/API_OPLACCTGDOCITEMCUBE_SRV/A_OperationalAcctgDocItemCube?$filter=AccountingDocumentType%20eq%20%27KZ%27', {
       auth: {
         username,
         password
