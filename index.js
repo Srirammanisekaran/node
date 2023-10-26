@@ -3,20 +3,7 @@ const axios = require('axios');
 const cors = require('cors');
 
 const app = express();
-//const port = process.env.PORT || 3000;
-const http = require('http');
 
-const hostname = 'localhost';
-const port = 3000;
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World!\n');
-});
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
 // Enable CORS
 app.use(cors());
 const username = 'APIUSER';
@@ -106,7 +93,7 @@ app.get('/api/vendoraddrs', async (req, res) => {
 //     }
 // });
 // Start the server
-app.listen(port, async () => {
+app.listen(3000, async () => {
     let image = await axios.get('https://www.essaedig.com/images/essae-logo.png', {responseType: 'arraybuffer'});
 let returnedB64 = Buffer.from(image.data).toString('base64');
 console.log('Server is running on port 3000');
